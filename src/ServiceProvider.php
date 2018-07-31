@@ -2,7 +2,6 @@
 
 namespace Laravolt\Etalase;
 
-use App\User;
 use Faker\Factory;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\View;
@@ -76,8 +75,9 @@ class ServiceProvider extends BaseServiceProvider
     protected function registerMenu()
     {
         if ($this->app->bound('laravolt.menu')) {
+            $parent = $this->app['laravolt.menu']->add('Sample UI')->data('icon', 'puzzle');
 
-            $menu = $this->app['laravolt.menu']->add('UI Element')->data('icon', 'puzzle');
+            $menu = $parent->add('UI Element')->data('icon', 'puzzle');
             $menu->add('Button', url('etalase/button'));
             $menu->add('Definition', url('etalase/definition'));
             $menu->add('Table', url('etalase/table'));
@@ -85,15 +85,15 @@ class ServiceProvider extends BaseServiceProvider
             $menu->add('Flash Message', url('etalase/flash'));
             $menu->add('Breadcrumb', url('etalase/breadcrumb'));
 
-            $menu = $this->app['laravolt.menu']->add('Layout')->data('icon', 'block layout');
+            $menu = $parent->add('Layout')->data('icon', 'block layout');
             $menu->add('Sidebar', url('etalase/layout/sidebar'));
             $menu->add('Minimalist', url('etalase/layout/minimalist'));
 
-            $menu = $this->app['laravolt.menu']->add('Utility')->data('icon', 'high battery');
+            $menu = $parent->add('Utility')->data('icon', 'high battery');
             $menu->add('Text Color', url('etalase/text'));
             $menu->add('Spacing', url('etalase/spacing'));
 
-            $menu = $this->app['laravolt.menu']->add('Sample Page')->data('icon', 'browser');
+            $menu = $parent->add('Sample Page')->data('icon', 'browser');
             $menu->add('Dashboard', url('etalase/dashboard'));
             $menu->add('Control Panel', url('etalase/dashboard/control-panel'));
             $menu->add('Launcher', url('etalase/launcher'));
