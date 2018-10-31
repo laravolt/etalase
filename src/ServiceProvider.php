@@ -86,8 +86,8 @@ class ServiceProvider extends BaseServiceProvider
             $menu->add('Breadcrumb', url('etalase/breadcrumb'));
 
             $menu = $parent->add('Layout')->data('icon', 'block layout');
-            $menu->add('Sidebar', url('etalase/layout/sidebar'));
-            $menu->add('Minimalist', url('etalase/layout/minimalist'));
+            $menu->add('Full', url('etalase/layout/full'));
+            $menu->add('Boxed', url('etalase/layout/boxed'));
 
             $menu = $parent->add('Utility')->data('icon', 'high battery');
             $menu->add('Text Color', url('etalase/text'));

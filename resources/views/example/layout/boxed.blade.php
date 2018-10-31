@@ -1,5 +1,5 @@
-@extends('etalase::layout')
-@section('content-inner')
+@extends('ui::layouts.boxed')
+@section('content')
 
     <div class="ui message">Content goes here...</div>
 
