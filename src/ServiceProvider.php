@@ -36,40 +36,7 @@ class ServiceProvider extends BaseServiceProvider
 
     protected function loadRoutes()
     {
-        /**
-         * @var \Illuminate\Routing\Router $router
-         */
-        $router = $this->app['router'];
-
-        $router->group(['prefix' => 'etalase', 'middleware' => ['web']], function () use ($router) {
-
-            $router->get('search/{query?}', function($query){
-
-                $data = \Indonesia::search($query)->paginateVillages();
-
-                $results = [];
-                foreach($data as $village) {
-                    $data->load('district.city.province');
-                    $results[] = [
-                        'name'  => "<strong>$village->name</strong>, $village->district_name, $village->city_name, $village->province_name",
-                        'description'  => "$village->name, $village->district_name, $village->city_name, $village->province_name",
-                        'value'  => $village->id,
-                    ];
-                }
-
-                $json = ['success' => true, 'results' => $results];
-                return response()->json($json);
-            });
-
-            $router->get('{page}', function ($page) {
-                try {
-                    return view('etalase::example.'.$page);
-                } catch (\Exception $e) {
-                    return view('etalase::missing', compact('page'));
-                }
-            })->where('page', '.*');
-
-        });
+        require __DIR__.'/../routes/web.php';
     }
 
     protected function registerMenu()
