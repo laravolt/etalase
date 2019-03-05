@@ -29,21 +29,7 @@
     <h3 class="ui header">Horizontal Form</h3>
     {!! form()->open('')->horizontal() !!}
     {!! form()->text('')->label('Label') !!}
-    {!! form()->text('')->label('Label') !!}
-    {!! form()->text('')->label('Label') !!}
-    {!! form()->text('')->label('Label') !!}
-    {!! form()->text('')->label('Label') !!}
-    {!! form()->text('')->label('Label') !!}
-    {!! form()->text('')->label('Label') !!}
-    {!! form()->text('')->label('Label') !!}
-    {!! form()->text('')->label('Label') !!}
-    {!! form()->text('')->label('Label') !!}
-    {!! form()->text('')->label('Label') !!}
-    {!! form()->text('')->label('Label') !!}
-    {!! form()->text('')->label('Label') !!}
-    {!! form()->text('')->label('Label') !!}
-    {!! form()->text('')->label('Label') !!}
-    {!! form()->text('')->label('Label') !!}
+    {!! form()->checkboxGroup('', ['satu', 'dua', 'tiga', 'empat'])->hint('lorem ipsum')->label('Label') !!}
     {!! form()->action(form()->submit('Submit')) !!}
     {!! form()->close() !!}
 
