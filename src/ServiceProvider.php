@@ -68,7 +68,11 @@ class ServiceProvider extends BaseServiceProvider
             $menu->add('Inbox', url('etalase/inbox'));
             $menu->add('Dropdown Shipping', url('etalase/shipping'));
 
-            $parent = $this->app['laravolt.menu']->add('Kitchen Sink', url('etalase/kitchen-sink'))->data('icon', 'th');
+            $parent->add('Kitchen Sink', url('etalase/kitchen-sink'))->data('icon', 'th');
+
+            $menu = $parent->add('Long Menu Text That Breaks Into Two Line or more', '')->data('icon', 'th');
+            $menu->add('Catch me if you can, sadly you cannot', '');
+
         }
     }
 
