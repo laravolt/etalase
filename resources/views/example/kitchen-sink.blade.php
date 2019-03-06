@@ -23,6 +23,7 @@
     {!! form()->text('')->label('fourteen wide')->fieldWidth(14) !!}
     {!! form()->text('')->label('fifteen wide')->fieldWidth(15) !!}
     {!! form()->text('')->label('sixteen wide')->fieldWidth(16) !!}
+    {!! form()->checkboxGroup('', ['satu', 'dua', 'tiga', 'empat'])->hint('lorem ipsum')->label('Label') !!}
     {!! form()->action(form()->submit('Submit')) !!}
     {!! form()->close() !!}
 
