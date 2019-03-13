@@ -8,6 +8,7 @@
             <a href="#dropdown" class="item">Dropdown Action</a>
             <a href="#single-line" class="item">Single Line</a>
             <a href="#datatable" class="item">Datatable</a>
+            <a href="#horizontal-scroll" class="item">Horizontal Scroll</a>
         </div>
     </div>
 
@@ -33,8 +34,13 @@
     </div>
 
     <div class="ui divider hidden section"></div>
-    
+
     <a name="datatable"></a>
     @etalase('Datatable', 'etalase::example.table.datatable')
+
+    <div class="ui divider hidden section"></div>
+
+    <a name="horizontal-scroll"></a>
+    @etalase('Horizontal Scroll', 'etalase::example.table.horizontal-scroll')
 
 @endsection
