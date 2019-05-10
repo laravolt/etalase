@@ -9,6 +9,7 @@
     ],
     function ($router) {
         $router->get('search/{query?}', ['uses' => 'SearchController']);
+        $router->get('suitable', ['uses' => 'SuitableController']);
         $router->get('{page}', ['uses' => 'PageController']);
     }
 );
