@@ -7,20 +7,20 @@ use Illuminate\Routing\Controller;
 use Laravolt\Etalase\Table\UserTable;
 use Laravolt\Suitable\Plugins\Pdf;
 use Laravolt\Suitable\Plugins\Spreadsheet;
+use Laravolt\Suitable\Tables\BasicTable;
 
 class SuitableController extends Controller
 {
     public function __invoke()
     {
-        $users = User::autoSort()->paginate(5);
-        $userTable = new UserTable($users);
+        $users = User::autoSort('s', 'd')->paginate(5);
 
-        $table = $userTable
+        return (new BasicTable($users))
+            ->only('id', 'name', 'email')
             ->plugins([
-                (new Pdf('users.pdf')),
-                (new Spreadsheet('users.xls')),
-            ]);
-
-        return $table->view('etalase::example.suitable');
+                new Pdf('users.pdf'),
+                new Spreadsheet('users.xls')
+            ])
+            ->view('etalase::example.suitable');
     }
 }

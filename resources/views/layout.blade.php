@@ -43,63 +43,65 @@
 <script src="{{ asset('lib/clipboard/clipboard.min.js') }}"></script>
 
 <script>
+  document.addEventListener('swup:contentReplaced', function (event) {
     $(document).ready(function () {
-        $('.example pre code').each(function (i, block) {
-            hljs.highlightBlock(block);
-        });
-        $('.example').on('click', '.button--code', function (e) {
-            $(e.delegateTarget).find('.example__code').toggle();
-        });
+      $('.example pre code').each(function (i, block) {
+        hljs.highlightBlock(block);
+      });
+      $('.example').on('click', '.button--code', function (e) {
+        $(e.delegateTarget).find('.example__code').toggle();
+      });
 
-        $('.example .button--copy').popup({
-            on: 'manual'
-        });
+      $('.example .button--copy').popup({
+        on: 'manual'
+      });
 
-        clipboard = new Clipboard('.example .button--copy', {
-            text: function (trigger) {
-                return $(trigger).closest('.example').find('.example__preview').html();
+      clipboard = new Clipboard('.example .button--copy', {
+        text: function (trigger) {
+          return $(trigger).closest('.example').find('.example__preview').html();
+        }
+      });
+
+      clipboard.on('success', function (e) {
+        $(e.trigger).popup('show');
+        setTimeout(function () {
+          $(e.trigger).popup('hide');
+        }, 2000);
+      });
+
+      $('.ui.calendar').each(function (idx, elm) {
+        elm = $(elm);
+        var format = elm.data('format');
+
+        if (!format) {
+          format = 'YYYY/MM/DD';
+        }
+
+        elm.calendar({
+          type: 'date',
+          formatter: {
+            date: function (date, settings) {
+              if (!date) {
+                return '';
+              }
+              var DD = ("0" + date.getDate()).slice(-2);
+              var MM = ("0" + (date.getMonth() + 1)).slice(-2);
+              var MMMM = settings.text.months[date.getMonth()];
+              var YY = date.getFullYear().toString().substr(2, 2);
+              var YYYY = date.getFullYear();
+
+              return format.replace('DD', DD).replace('MMMM', MMMM).replace('MM', MM).replace('YYYY', YYYY).replace('YY', YY);
             }
+          }
         });
+      });
 
-        clipboard.on('success', function (e) {
-            $(e.trigger).popup('show');
-            setTimeout(function(){
-                $(e.trigger).popup('hide');
-            }, 2000);
-        });
-
-        $('.ui.calendar').each(function (idx, elm) {
-            elm = $(elm);
-            var format = elm.data('format');
-
-            if (!format) {
-                format = 'YYYY/MM/DD';
-            }
-
-            elm.calendar({
-                type: 'date',
-                formatter: {
-                    date: function (date, settings) {
-                        if (!date) {
-                            return '';
-                        }
-                        var DD = ("0" + date.getDate()).slice(-2);
-                        var MM = ("0" + (date.getMonth() + 1)).slice(-2);
-                        var MMMM = settings.text.months[date.getMonth()];
-                        var YY = date.getFullYear().toString().substr(2, 2);
-                        var YYYY = date.getFullYear();
-
-                        return format.replace('DD', DD).replace('MMMM', MMMM).replace('MM', MM).replace('YYYY', YYYY).replace('YY', YY);
-                    }
-                }
-            });
-        });
-
-        Messenger.options = {
-            extraClasses: 'messenger-fixed messenger-on-top animated',
-            theme: 'dark'
-        };
-
+      Messenger.options = {
+        extraClasses: 'messenger-fixed messenger-on-top animated',
+        theme: 'dark'
+      };
     });
+  });
+
 </script>
 @endpush

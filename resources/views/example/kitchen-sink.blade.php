@@ -5,6 +5,10 @@
 @section('content-inner')
     <h2 class="ui header">Kitchen Sink</h2>
 
+    {!! form()->open('') !!}
+    {!! form()->datepicker('datepicker') !!}
+    {!! form()->close() !!}
+
     <h3 class="ui header">Regular Form</h3>
     {!! form()->open('') !!}
     {!! form()->text('')->label('one wide')->fieldWidth(1) !!}

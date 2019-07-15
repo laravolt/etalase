@@ -11,19 +11,21 @@
 @endsection
 
 @push('body')
-<script>
-    $(function(){
+    <script>
+      document.addEventListener('swup:contentReplaced', function (event) {
+        $(function () {
 
-        $(document).on('click', '.ui.button.flash--success', function(){
-            Messenger({}).post({"message":"Success bro, good job!","type":"success"});
-        });
-        $(document).on('click', '.ui.button.flash--error', function(){
-            Messenger({}).post({"message":"Opps, error bro!","type":"error"});
-        });
-        $(document).on('click', '.ui.button.flash--info', function(){
-            Messenger({}).post({"message":"Woro-woro!","type":"info"});
-        });
+          $(document).on('click', '.ui.button.flash--success', function () {
+            Messenger({}).post({"message": "Success bro, good job!", "type": "success"});
+          });
+          $(document).on('click', '.ui.button.flash--error', function () {
+            Messenger({}).post({"message": "Opps, error bro!", "type": "error"});
+          });
+          $(document).on('click', '.ui.button.flash--info', function () {
+            Messenger({}).post({"message": "Woro-woro!", "type": "info"});
+          });
 
-    });
-</script>
+        });
+      });
+    </script>
 @endpush

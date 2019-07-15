@@ -27,7 +27,7 @@ class ServiceProvider extends BaseServiceProvider
     {
         $this->loadViewsFrom(realpath(__DIR__.'/../resources/views'), 'etalase');
         $this->loadRoutes();
-        $this->registerMenu();
+        // $this->registerMenu();
         $this->registerBlade();
         $this->registerVariables();
 

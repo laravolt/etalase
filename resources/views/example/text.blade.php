@@ -3,7 +3,7 @@
 
     @etalase('Text Color')
         @foreach(['red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue', 'violet', 'purple', 'pink', 'brown', 'grey', 'black'] as $color)
-            <div class="{{ $color }} text">{{ $color }}</div>
+            <div><span class="ui {{ $color }} text">{{ $color }}</span></div>
         @endforeach
     @endetalase
 
