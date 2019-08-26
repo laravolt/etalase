@@ -10,6 +10,7 @@
     function ($router) {
         $router->get('search/{query?}', ['uses' => 'SearchController']);
         $router->get('suitable', ['uses' => 'SuitableController']);
+        $router->post('upload', ['uses' => 'Upload']);
         $router->get('{page}', ['uses' => 'PageController']);
     }
 );

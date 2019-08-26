@@ -27,7 +27,8 @@
     {!! form()->text('')->label('fourteen wide')->fieldWidth(14) !!}
     {!! form()->text('')->label('fifteen wide')->fieldWidth(15) !!}
     {!! form()->text('')->label('sixteen wide')->fieldWidth(16) !!}
-    {!! form()->checkboxGroup('', ['satu', 'dua', 'tiga', 'empat'])->hint('lorem ipsum')->label('Label') !!}
+    {!! form()->checkboxGroup('', ['satu', 'dua', 'tiga', 'empat'])->hint('lorem ipsum')->label('Default Checkbox') !!}
+    {!! form()->checkboxGroup('', ['satu', 'dua', 'tiga', 'empat'])->hint('lorem ipsum')->label('Inline checkbox')->inline() !!}
     {!! form()->action(form()->submit('Submit')) !!}
     {!! form()->close() !!}
 
@@ -35,6 +36,7 @@
     {!! form()->open('')->horizontal() !!}
     {!! form()->text('')->label('Label') !!}
     {!! form()->checkboxGroup('', ['satu', 'dua', 'tiga', 'empat'])->hint('lorem ipsum')->label('Label') !!}
+    {!! form()->radioGroup('', ['satu', 'dua', 'tiga', 'empat'])->hint('lorem ipsum')->label('Label')->inline() !!}
     {!! form()->action(form()->submit('Submit')) !!}
     {!! form()->close() !!}
 
