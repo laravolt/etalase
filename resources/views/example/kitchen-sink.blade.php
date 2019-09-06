@@ -6,7 +6,8 @@
     <h2 class="ui header">Kitchen Sink</h2>
 
     {!! form()->open('') !!}
-    {!! form()->datepicker('datepicker') !!}
+    {!! form()->uploader('file')->label('Uploader') !!}
+    {!! form()->datepicker('datepicker')->label('Datepicker') !!}
     {!! form()->close() !!}
 
     <h3 class="ui header">Regular Form</h3>
