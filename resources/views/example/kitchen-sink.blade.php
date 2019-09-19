@@ -8,6 +8,9 @@
     {!! form()->open('') !!}
     {!! form()->uploader('file')->label('Uploader') !!}
     {!! form()->datepicker('datepicker')->label('Datepicker') !!}
+    {!! form()->rupiah('harga_1')->label('Rupiah') !!}
+    {!! form()->rupiah('harga_2')->label('Rupiah') !!}
+    {!! form()->selectMultiple('tags', ['satu', 'dua'], [1])->label('Tags') !!}
     {!! form()->close() !!}
 
     <h3 class="ui header">Regular Form</h3>
