@@ -2,12 +2,12 @@
 
 namespace Laravolt\Etalase\Http\Controllers;
 
-use Laravolt\Media\FileUploader;
+use Laravolt\Platform\Services\FileUploader;
 
 class Upload
 {
     public function __invoke()
     {
-        dd(FileUploader::handle('avatar'));
+        dd(FileUploader::handle('files'));
     }
 }

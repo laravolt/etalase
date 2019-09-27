@@ -13,6 +13,7 @@
         $router->get('semantic-form', ['uses' => 'SemanticFormController@create'])->name('semantic-form.create');
         $router->post('semantic-form', ['uses' => 'SemanticFormController@store'])->name('semantic-form.store');
         $router->post('upload', ['uses' => 'Upload']);
+        $router->get('jasper', ['uses' => 'JasperController@index']);
         $router->get('{page}', ['uses' => 'PageController']);
     }
 );
