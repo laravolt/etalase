@@ -16,9 +16,6 @@ class SemanticFormController extends Controller
 
     public function store()
     {
-        $this->validate(request(), [
-            'foo' => 'required',
-            'content' => 'required',
-        ]);
+        dd(request()->all());
     }
 }
