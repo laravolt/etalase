@@ -27,7 +27,7 @@ class ServiceProvider extends BaseServiceProvider
     {
         $this->loadViewsFrom(realpath(__DIR__.'/../resources/views'), 'etalase');
         $this->loadRoutes();
-        // $this->registerMenu();
+        $this->registerMenu();
         $this->registerBlade();
         $this->registerVariables();
 
@@ -51,10 +51,6 @@ class ServiceProvider extends BaseServiceProvider
             $menu->add('Form', url('etalase/form'));
             $menu->add('Flash Message', url('etalase/flash'));
             $menu->add('Breadcrumb', url('etalase/breadcrumb'));
-
-            $menu = $parent->add('Layout')->data('icon', 'block layout');
-            $menu->add('Full', url('etalase/layout/full'));
-            $menu->add('Boxed', url('etalase/layout/boxed'));
 
             $menu = $parent->add('Utility')->data('icon', 'high battery');
             $menu->add('Text Color', url('etalase/text'));

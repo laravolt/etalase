@@ -17,5 +17,6 @@ class SemanticFormController extends Controller
     public function store()
     {
         dd(request()->all());
+        return redirect()->back()->withInput()->withError('Try again');
     }
 }
