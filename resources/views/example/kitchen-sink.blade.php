@@ -5,6 +5,54 @@
 @section('content-inner')
     <h2 class="ui header">Kitchen Sink</h2>
 
+    <div>
+        <div class="ui label red ">red</div>
+        <div class="ui label orange ">orange</div>
+        <div class="ui label yellow ">yellow</div>
+        <div class="ui label olive ">olive</div>
+        <div class="ui label green ">olive</div>
+        <div class="ui label teal ">olive</div>
+        <div class="ui label blue ">olive</div>
+        <div class="ui label violet ">olive</div>
+        <div class="ui label purple ">olive</div>
+        <div class="ui label pink ">olive</div>
+        <div class="ui label brown ">olive</div>
+        <div class="ui label grey ">olive</div>
+        <div class="ui label black ">olive</div>
+    </div>
+
+    <div>
+        <div class="ui label red basic">red</div>
+        <div class="ui label orange basic">orange</div>
+        <div class="ui label yellow basic">yellow</div>
+        <div class="ui label olive basic">olive</div>
+        <div class="ui label green basic">olive</div>
+        <div class="ui label teal basic">olive</div>
+        <div class="ui label blue basic">olive</div>
+        <div class="ui label violet basic">olive</div>
+        <div class="ui label purple basic">olive</div>
+        <div class="ui label pink basic">olive</div>
+        <div class="ui label brown basic">olive</div>
+        <div class="ui label grey basic">olive</div>
+        <div class="ui label black basic">olive</div>
+    </div>
+
+    <div>
+        <div class="ui label red basic">red</div>
+        <div class="ui label orange basic">orange</div>
+        <div class="ui label yellow basic">yellow</div>
+        <div class="ui label olive basic">olive</div>
+        <div class="ui label green basic">olive</div>
+        <div class="ui label teal basic">olive</div>
+        <div class="ui label blue basic">olive</div>
+        <div class="ui label violet basic">olive</div>
+        <div class="ui label purple basic">olive</div>
+        <div class="ui label pink basic">olive</div>
+        <div class="ui label brown basic">olive</div>
+        <div class="ui label grey basic">olive</div>
+        <div class="ui label black basic">olive</div>
+    </div>
+
     {!! form()->open('') !!}
     {!! form()->uploader('file')->label('Uploader') !!}
     {!! form()->datepicker('datepicker')->label('Datepicker') !!}

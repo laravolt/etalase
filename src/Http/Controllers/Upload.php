@@ -8,6 +8,12 @@ class Upload
 {
     public function __invoke()
     {
-        dd(FileUploader::handle('files'));
+        dd(request()->allFiles());
+        request()->media('attachments')->store();
+        // request()->media('attachments')->toArray();
+        // request()->media('attachments')->store();
+        // request()->media('attachments')->delete();
+        // request()->media('attachments')->sync();
+        // dd(FileUploader::handle('attachments'));
     }
 }

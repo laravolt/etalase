@@ -18,9 +18,14 @@ class SuitableController extends Controller
 {
     public function __invoke()
     {
-        $users = User::paginate(5);
+        // $users = User::all();
 
         // $users = DB::table('users')->select('*')->paginate();
+
+        $users = [
+            ['name' => 'Bayu Hendra', 'email' => 'uyab.exe@gmail.com'],
+            ['name' => 'Hendra Winata', 'email' => 'bayu.hendra@javan.co.id'],
+        ];
 
         return (new UserTable($users))
             ->view('etalase::example.suitable');

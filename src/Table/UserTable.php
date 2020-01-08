@@ -31,27 +31,24 @@ class UserTable extends TableView
     protected function init()
     {
         $this->decorate(function (\Laravolt\Suitable\Builder $table) {
-            // $table->getDefaultSegment()->left(Action::make('plus', 'Tambah', '#'));
-            $countries = Provinsi::take(3)->pluck('name', 'id')->toArray();
-            $table->getDefaultSegment()->left(\Laravolt\Suitable\Toolbars\Text::make('Pengguna'));
-            // $table->getDefaultSegment()->right('lima')->prependRight('empat')->appendRight('enam');
+            $table->getDefaultSegment()->left(Action::make('plus', 'Tambah', '#'));
+            // $countries = Provinsi::take(3)->pluck('name', 'id')->toArray();
+            // $table->getDefaultSegment()->left(\Laravolt\Suitable\Toolbars\Text::make('Pengguna'));
+            $table->getDefaultSegment()->right('lima')->prependRight('empat')->appendRight('enam');
         });
     }
 
     protected function columns()
     {
         $options = ['Root', 'User', 'Gues'];
+
         return [
             Numbering::make('No'),
-            Text::make('name', 'Nama'),
+            Text::make('nama', 'Nama'),
             Text::make('email'),
-            // View::make('users.address', 'Address'),
-            // RestfulButton::make('post'),
-            Raw::make(function ($item) {
-                return $item->roles->implode('name', ' & ');
-            }, 'Roles'),
-            Text::make('status'),
-            Date::make('created_at', 'Terdaftar Sejak'),
+            Raw::make(function($data){
+                return json_encode($data);
+            })
         ];
     }
 }
